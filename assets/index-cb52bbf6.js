@@ -1,5 +1,0 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const r of e)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function n(e){const r={};return e.integrity&&(r.integrity=e.integrity),e.referrerpolicy&&(r.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?r.credentials="include":e.crossorigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function s(e){if(e.ep)return;e.ep=!0;const r=n(e);fetch(e.href,r)}})();const a=()=>{const t=new Date,n=new Date(t.getFullYear(),t.getMonth(),t.getDate()),s=new Date(2023,0,1);return(n.getTime()-s.getTime())/864e5+1},l=o=>{let t="th";if(o<10||o>20)switch(o%10){case 1:t="st";break;case 2:t="nd";break;case 3:t="rd";break}return t},c=a(),u=l(c);document.querySelector("#app").innerHTML=`
-    <div>
-        <h1>It is the ${c}${u} day of the year.</h1>
-    </div>
-`;
