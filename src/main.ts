@@ -8,7 +8,7 @@ const getDayNumber = () => {
 
     const dayNumber = (today.getTime() - firstDayOfYear.getTime()) / millisecondsInDay + 1;
 
-    return dayNumber;
+    return (dayNumber + 0.5) | 0;
 };
 
 const getNumberSuffix = (n: number) => {
@@ -17,11 +17,16 @@ const getNumberSuffix = (n: number) => {
     if (n < 10 || n > 20) {
         const mod = n % 10;
 
-        switch (mod)
-        {
-            case 1: suffix = "st"; break;
-            case 2: suffix = "nd"; break;
-            case 3: suffix = "rd"; break;
+        switch (mod) {
+            case 1:
+                suffix = 'st';
+                break;
+            case 2:
+                suffix = 'nd';
+                break;
+            case 3:
+                suffix = 'rd';
+                break;
         }
     }
 
